@@ -4,6 +4,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { TodoModule } from './todo/todo.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { AppService } from './app.service';
       // 生成されたschemaを自動でsortされるためのオプションをオンにする
       sortSchema: true,
     }),
+    TodoModule,
   ],
   controllers: [AppController],
   providers: [AppService],
